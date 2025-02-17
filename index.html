@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+<title>Formulário</title>
+<style>
+body {
+    background-color: #f0f0f0;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    color: #333;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+label {
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    width: 300px;
+    max-width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+footer {
+    margin-top: 20px;
+    color: #555;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<h1>Código em JavaScript</h1>
+<div class="content">
+<label for="name">Digite o seu nome:</label>
+<input type="text" id="name" maxlength="100">
+</div>
+<footer id="footer">Seu nome aparecerá aqui...</footer>
+<script>
+const nameInput = document.getElementById('name');
+const footer = document.getElementById('footer');
+
+nameInput.addEventListener('input', () => {
+    footer.textContent = nameInput.value || 'Seu nome aparecerá aqui...';
+});
+</script>
+</body>
+</html>
